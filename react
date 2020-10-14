@@ -1,0 +1,15 @@
+reactJS
+create project reactJS		: npx create-react-app namaproject,
+running project				: npm start
+
+reactNative
+create project reactNative 	: react-native init namaproject/create-react-native-app namaproject  
+running project 			: react-native run-android
+
+
+keuggulan reactnative:
+- tidak perlu memperlajari dua bahasa pemrograman web dan mobile karna strukturnya sama dan sekali coding bisa di jalankan di keduanya,
+- proses refresh develop memiliki respon yang cepat,
+approval SKP/2020I/00000001 kusrianci	
+rafaksi  SKP/2020I/00000002
+non appv SKP/2020I/00000002 victor

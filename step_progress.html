@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+  <head>
+	<script>
+			function includeHTML() {
+			  var z, i, elmnt, file, xhttp;
+			  /* Loop through a collection of all HTML elements: */
+			  z = document.getElementsByTagName("*");
+			  for (i = 0; i < z.length; i++) {
+				elmnt = z[i];
+				/*search for elements with a certain atrribute:*/
+				file = elmnt.getAttribute("w3-include-html");
+				if (file) {
+				  /* Make an HTTP request using the attribute value as the file name: */
+				  xhttp = new XMLHttpRequest();
+				  xhttp.onreadystatechange = function() {
+					if (this.readyState == 4) {
+					  if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+					  if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+					  /* Remove the attribute, and call this function once more: */
+					  elmnt.removeAttribute("w3-include-html");
+					  includeHTML();
+					}
+				  }
+				  xhttp.open("GET", file, true);
+				  xhttp.send();
+				  /* Exit the function: */
+				  return;
+				}
+			  }
+			}
+		</script>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<meta content="Preview page of Metronic Admin Theme #4 for managed datatable samples" name="description" />
+	<meta content="" name="author" />
+	
+	<!-- BEGIN GLOBAL MANDATORY STYLES -->
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+	<script>
+		$(document).ready( function () {
+			$('#example').DataTable( {
+				"searching":false,	
+			} );
+		} );
+	</script>
+	
+	<link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+	<!--<link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />-->
+	<link href="assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+	<link href="assets/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
+	<!-- <link href="assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" /> -->
+    <link href="assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+	<link href="assets/layouts/layout4/css/layout.min.css" rel="stylesheet" type="text/css" />
+	<link href="assets/layouts/layout4/css/themes/default.min.css" rel="stylesheet" type="text/css" id="style_color" />
+	<link href="assets/layouts/layout4/css/custom.min.css" rel="stylesheet" type="text/css" />
+	<link rel="shortcut icon" href="favicon.ico" /> </head>
+    <!-- Somehow I got an error, so I comment the title, just uncomment to show -->
+    <!-- <title>Multi Step Form | CodingNepal</title> -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+  <body class="page-container-bg-solid page-header-fixed page-sidebar-closed-hide-logo">
+	<div class="clearfix"> </div>
+		<div class="page-container">
+			<div w3-include-html="sidebar.php"></div>	
+			<div class="clearfix"> </div>
+				<div class="container">
+					<header>Signup Form</header>
+					<div class="progress-bar">
+						<div class="step">
+							<p>Name</p>
+							<div class="bullet">
+								<span>1</span>
+							</div>
+							<div class="check fas fa-check">
+							</div>
+						</div>
+						<div class="step">
+							<p>Contact</p>
+							<div class="bullet">
+								<span>2</span>
+							</div>
+							<div class="check fas fa-check">
+							</div>
+						</div>
+						<div class="step">
+							<p>Birth</p>
+							<div class="bullet">
+								<span>3</span>
+							</div>
+							<div class="check fas fa-check">
+							</div>
+						</div>
+						<div class="step">
+							<p>Submit</p>
+							<div class="bullet">
+								<span>4</span>
+							</div>
+							<div class="check fas fa-check">
+							</div>
+						</div>
+					</div>
+					<div class="form-outer">
+						<form action="#">
+							<div class="page slide-page">
+								<div class="title">Basic Info:
+								</div>
+								<div class="field">
+									<div class="label">First Name
+									</div>
+									<input type="text">
+								</div>
+								<div class="field">
+									<div class="label">Last Name
+									</div>
+									<input type="text">
+								</div>
+								<div class="field">
+									<button class="firstNext next">Next</button>
+								</div>
+							</div>
+							<div class="page">
+								<div class="title">Contact Info:
+								</div>
+								<div class="field">
+									<div class="label">Email Address
+									</div>
+										<input type="text">
+									</div>
+									<div class="field">
+										<div class="label">Phone Number
+										</div>
+										<input type="Number">
+									</div>
+									<div class="field btns">
+									  <button class="prev-1 prev">Previous</button>
+									  <button class="next-1 next">Next</button>
+									</div>
+								</div>
+								<div class="page">
+									<div class="title">Date of Birth:
+									</div>
+									<div class="field">
+										<div class="label">Date
+										</div>
+										<input type="text">
+									</div>
+									<div class="field">
+										<div class="label">Gender
+										</div>
+										<select>
+											<option>Male</option>
+											<option>Female</option>
+											<option>Other</option>
+										</select>
+									</div>
+									<div class="field btns">
+										<button class="prev-2 prev">Previous</button>
+										<button class="next-2 next">Next</button>
+									</div>
+								</div>
+								<div class="page">
+									<div class="title">Login Details:
+									</div>
+									<div class="field">
+										<div class="label">Username
+										</div>
+										<input type="text">
+									</div>
+									<div class="field">
+										<div class="label">Password
+										</div>
+										<input type="password">
+									</div>
+									<div class="field btns">
+										<button class="prev-3 prev">Previous</button>
+										<button class="submit">Submit</button>
+									</div>
+								</div>
+							</div>		
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+			<!-- Somehow I got an error, so I comment the script tag, just uncomment to use -->
+	<script src="script.js"></script> 
+
+  </body>
+</html>
